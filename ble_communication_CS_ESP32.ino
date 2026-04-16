@@ -73,12 +73,15 @@ void setup() {
 
 void loop() {
   int moisture = readSensor();
+  Serial.println(analogRead(SENSOR_PIN));
 
   // 🚨 Basic sanity check (prevents sending garbage)
   if (moisture < 50) {
     Serial.println("⚠️ Sensor not in soil / invalid reading");
    // Serial.println(analogRead(SENSOR_PIN));
     delay(2000);
+    Serial.println(analogRead(SENSOR_PIN));
+
     return;
   }
 
